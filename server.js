@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 var articles={ 
-article-one:{
+'article-one':{
  title:'Article one | Salman Faries',
  heading: 'Article one',
  date:'sep 5,2016',
@@ -17,14 +17,14 @@ article-one:{
             <p> I want develop UNWO app in my style. Help me tpo understand the app development and deployment fully.
             </p>`
 },
-article-two:{
+'article-two':{
     title:'Article two | Salman Faries',
  heading: 'Article two',
  date:'sep 15,2017',
  content:`<p>Hi, Iam Salman Faries. This is my second article
             </p>`
 },
-article-three:{
+'article-three':{
     title:'Article three | Salman Faries',
  heading: 'Article three',
  date:'sep 15,2017',
