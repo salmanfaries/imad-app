@@ -4,7 +4,8 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-var articleone={
+var articles={ 
+article-one:{
  title:'Article one | Salman Faries',
  heading: 'Article one',
  date:'sep 5,2016',
@@ -15,8 +16,23 @@ var articleone={
             </p>
             <p> I want develop UNWO app in my style. Help me tpo understand the app development and deployment fully.
             </p>`
- 
+},
+article-two:{
+    title:'Article two | Salman Faries',
+ heading: 'Article two',
+ date:'sep 15,2017',
+ content:`<p>Hi, Iam Salman Faries. This is my second article
+            </p>`
+},
+article-three:{
+    title:'Article three | Salman Faries',
+ heading: 'Article three',
+ date:'sep 15,2017',
+ content:`<p>Hi, Iam Salman Faries. This is my third article
+            </p>`
+}
 };
+
 function CreateTemplate(data){
     var title=data.title;
     var heading=data.heading;
@@ -56,8 +72,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one',function(req,res){
-     res.send(CreateTemplate(articleone));
+app.get('/articleName',function(req,res){
+    var articleName=req.params.articleName;
+     res.send(CreateTemplate(articles[articleName]));
 });
 app.get('/article-two',function(req,res){
     res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
